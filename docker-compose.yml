@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+    core-nestjs:
+        container_name: core-nestjs
+        image: core-nestjs:dev
+        build:
+           context: .
+           target: builder
+        ports:
+            - 3000:${APP_PORT}
+            - "9230:${APP_DEBUG_PORT}"
+        tty: true
+        working_dir: /usr/src/app
+        volumes:
+            - ./:/usr/src/app
+            - /usr/src/app/node_modules   
+        env_file:
+            - .env
+        networks:
+            - core_network
+            - postgres_network    
+            
+networks:
+    core_network:
+        name: core_network
+    postgres_network:
+        external:
+            name: postgres_network            

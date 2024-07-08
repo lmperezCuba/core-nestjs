@@ -1,0 +1,12 @@
+{
+    "name": "aicommon-nest-remote",
+    "image": "aicommon-nets:dev",
+	"workspaceFolder": "/usr/src/app",
+	"extensions": [
+		"mhutchie.git-graph",
+		"ms-vscode.vscode-typescript-tslint-plugin"
+    ],
+    "forwardPorts": [3000],
+    "remoteUser": "nodejs",
+    "remoteEnv": {}
+}
