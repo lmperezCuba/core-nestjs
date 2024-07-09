@@ -26,7 +26,7 @@ ENV NODE_ENV=${NODE_ENV}
 COPY package*.json ./
 
 # uncomment the line below and add node_modules to .dockerignore
-RUN yarn install
+RUN npm install
 
 #ENV TZ=America/Havana
 ENV COMPOSE_HTTP_TIMEOUT=200
